@@ -39,13 +39,13 @@ def classify_prompt(text):
             return True, "renvoyer vers man"
         elif google_score > 0.8:
             print("cherchable sur google facilement")
-            return True, "renvoyer vers Google"
+            return True, f"https://letmegooglethat.com/?q={text.replace(" ", "+")}"
         else:
             print("code informatique")
             return True, "réponse correcte (code informatique)"
     else:
         print("fakse")
-        return False, "réponse incorrecte"
+        return False, "Question hors sujet utilise une autre IA"
 
 def ask_ai(question: str):
     call_api = classify_prompt(question)

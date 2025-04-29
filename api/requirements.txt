@@ -5,3 +5,5 @@ pandas
 numpy
 matplotlib
 pyRAPL
+transformers
+torch
