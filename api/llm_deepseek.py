@@ -47,14 +47,9 @@ def classify_prompt(text):
         print("fakse")
         return False, "réponse incorrecte"
 
-if __name__ == "__main__":
-    text = ""
-    call_api = False
-    while (text != "exit"):
-        text = input("=> ")
-        call_api = classify_prompt(text)
-        print(call_api)
-        if call_api[0] == True:
-            Call_Ollama(text)
-        else:
-            print("Message pas conforme")
+def ask_ai(question: str):
+    call_api = classify_prompt(question)
+    if call_api[0] == True:
+        return Call_Ollama(question)
+    else:
+        return call_api[1]

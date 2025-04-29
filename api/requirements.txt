@@ -1,3 +1,7 @@
 ollama
 fastapi
 uvicorn
+pandas
+numpy
+matplotlib
+pyRAPL
